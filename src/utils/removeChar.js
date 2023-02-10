@@ -7,7 +7,6 @@ export const restrictInputMobile = (value) => {
 
   let tempVal = [];
 
-  tempVal = [];
   split2.forEach((item) => {
     if (splitValue.includes(item)) {
       tempVal.push(item);
