@@ -15,6 +15,11 @@ app.use(router);
 app.component('svg-icon', icons);
 app.component('layout-default', LayoutDefault);
 
+app.directive('remove-char', {
+  updated: (el, binding) => {
+  },
+});
+
 app.directive('color', {
   created: (el, binding) => {
     el.style.color = binding.value;
