@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import router from './router';
 import FirstPlugin from './utils/plugins/FirstPlugin.js';
+import { restrictInputMobile } from './utils/removeChar.js';
 import LayoutDefault from './layouts/Default.vue';
 import App from './App.vue';
 
@@ -17,6 +18,8 @@ app.component('layout-default', LayoutDefault);
 
 app.directive('remove-char', {
   updated: (el, binding) => {
+    const res = restrictInputMobile(binding.instance.input);
+    el.value = res;
   },
 });
 

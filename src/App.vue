@@ -30,6 +30,8 @@ export default {
 
     const exceludeKey = ['Backspace'];
 
+    
+
     function validateInput(evt) {
       // checkRegexInputPasswordSpecialChar(val);
       const regex = /[a-zA-Z0-9!@#$%^&*]+(?:_[a-zA-Z0-9!@#$%^&*])*$/;
