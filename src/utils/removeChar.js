@@ -1,18 +1,25 @@
 export const restrictInputMobile = (value) => {
   const allowValue =
-    '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*';
+  const splitValue = allowValue.split('');
 
-  console.log('value  = ', value);
+  const split2 = value.split('');
 
   let tempVal = [];
 
-  // asd!@ -> asd
-  const splitValue = value.split('');
-
-  splitValue.forEach((item, index) => {
-    if (allowValue.search(item) !== -1) {
+  tempVal = [];
+  split2.forEach((item) => {
+    if (splitValue.includes(item)) {
       tempVal.push(item);
     }
   });
-  return tempVal.join('');
+  // const rep = value.replace(item, '');
+  // tempVal.push(rep);
+
+  // splitValue.forEach((item, index) => {
+  // });
+
+  console.log('tempVal = ', tempVal);
+
+  return String(tempVal.join(''));
 };

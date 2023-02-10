@@ -19,6 +19,7 @@ app.component('layout-default', LayoutDefault);
 app.directive('remove-char', {
   updated: (el, binding) => {
     const res = restrictInputMobile(binding.instance.input);
+    console.log('directive = ', res);
     el.value = res;
   },
 });

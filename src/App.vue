@@ -1,17 +1,17 @@
 <template>
-  <div style="display: flex; padding: 10px">
+  <div>
     <input
-      v-remove-char
       type="text"
+      id="inputs"
       v-model="input"
       class="input-test"
       placeholder="input apa aja"
-      @keypress="validateInput($event)"
     />
+    <!-- @keydown="validateInput($event)" -->
 
-    <!-- <component :is="layout">
+    <component :is="layout">
       <router-view />
-    </component> -->
+    </component>
   </div>
 </template>
 
@@ -33,8 +33,13 @@ export default {
 
     watchEffect(() => {
       const res = restrictInputMobile(input.value);
-      input.value = res;
-      // console.log('watcher = ', res);
+      const aa = document.getElementById('inputs');
+      if (aa) {
+        aa.value = res;
+        input.value = res;
+      }
+
+      console.log('watch = ', aa ? aa.value : '');
     });
 
     function validateInput(evt) {
