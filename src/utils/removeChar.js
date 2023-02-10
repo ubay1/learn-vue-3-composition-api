@@ -1,6 +1,6 @@
 export const restrictInputMobile = (value) => {
   const allowValue =
-    '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*';
 
   const splitValue = value.split('');
 
