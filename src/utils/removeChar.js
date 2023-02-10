@@ -10,6 +10,5 @@ export const restrictInputMobile = (value) => {
       tempVal.push(item);
     }
   });
-  console.log('restrictInputMobile = ', tempVal.join(''));
   return tempVal.join('');
 };

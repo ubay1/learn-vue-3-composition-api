@@ -16,7 +16,8 @@
 </template>
 
 <script>
-import { ref, computed, onMounted, inject } from 'vue';
+import { ref, computed, onMounted, inject, watchEffect } from 'vue';
+import { restrictInputMobile } from './utils/removeChar.js';
 
 export default {
   components: {},
@@ -30,7 +31,11 @@ export default {
 
     const exceludeKey = ['Backspace'];
 
-    
+    watchEffect(() => {
+      const res = restrictInputMobile(input.value);
+      input.value = res;
+      console.log('watcher = ', res);
+    });
 
     function validateInput(evt) {
       // checkRegexInputPasswordSpecialChar(val);
