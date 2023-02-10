@@ -6,7 +6,7 @@
       v-model="input"
       class="input-test"
       placeholder="input apa aja"
-      @keydown="validateInput($event)"
+      @keypress="validateInput($event)"
     />
 
     <!-- <component :is="layout">
@@ -34,7 +34,7 @@ export default {
     watchEffect(() => {
       const res = restrictInputMobile(input.value);
       input.value = res;
-      console.log('watcher = ', res);
+      // console.log('watcher = ', res);
     });
 
     function validateInput(evt) {

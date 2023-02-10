@@ -1,11 +1,15 @@
 export const restrictInputMobile = (value) => {
   const allowValue =
-    '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*';
+    '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-  const splitValue = value.split('');
+  console.log('value  = ', value);
 
   let tempVal = [];
-  splitValue.forEach((item) => {
+
+  // asd!@ -> asd
+  const splitValue = value.split('');
+
+  splitValue.forEach((item, index) => {
     if (allowValue.search(item) !== -1) {
       tempVal.push(item);
     }
